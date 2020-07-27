@@ -1,0 +1,25 @@
+This will be the beginning of my studies for MIT 6.096.
+
+It's high time I've dug deeper into a C based mid/high language - this repository will be for C++ dev and Git learning in parallel.
+
+useful git commands:
+    after initialising git with 'git init'
+    or cloning existing git with 'git clone'
+
+    all new files you create will be untracked. to track them so they will be added into the git going forward:
+    'git add "file"'
+        rerunning this command will push a new commit
+
+    this is because git works on a three/four stage principle:
+        untracked: files in the repository that haven't been tracked yet or otherwise are garbage to be removed
+        unmodified: git retains a pointer to this version of the file
+        modified: you've made changes to a file that will need to be pushed
+        staged: git records a new version of the file and commits it to a snapshot
+    
+    file status with 'git status'
+
+    sometimes we want to ignore garbage files like locally produced logs and what not
+        by creating .gitignore file - this will initialise the repository with things you want to avoid committing
+        good examples here: 'https://github.com/github/gitignore'
+
+        you can use one root .gitignore for the whole repository or even nest further conditions in deeper subdirectories
