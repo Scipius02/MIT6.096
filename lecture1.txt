@@ -23,3 +23,9 @@ useful git commands:
         good examples here: 'https://github.com/github/gitignore'
 
         you can use one root .gitignore for the whole repository or even nest further conditions in deeper subdirectories
+
+    show what you've changed but not staged with 'git diff'
+        for staged that will be committed: 'git diff --staged'
+
+    commit file with 'git commit'
+        can skip staging with 'git commit -a'
