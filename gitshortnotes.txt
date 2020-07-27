@@ -89,3 +89,22 @@ useful git commands:
         $ git config --global alias.br branch
 
 branching - diverging from main line of development to work in a free experimental space
+    exploration into taxonomy:
+        each commit holds a reference to a tree, as well as author name, etc
+        each tree holds references to underlying blobs.
+        these blobs are the files that you're working on. 
+
+        subsequent commits will hold pointers to previous commits - this is how git tracks the changing snapshots
+
+        the branch moves the pointer elsewhere. the commit you're currently looking at is marked by the HEAD (like of a tape)
+
+    create new branch with 'git branch <name>'
+    see where you're at with 'git log'
+        add --all to show all branches
+    to switch to an extent branch, 'git checkout <name>'
+        add -b to create a branch and switch to it
+
+    best practice is to clean your working area before switching
+        i think i lost the previous version of these notes by not doing this...
+
+    
