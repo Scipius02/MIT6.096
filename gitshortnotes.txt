@@ -29,3 +29,63 @@ useful git commands:
 
     commit file with 'git commit'
         can skip staging with 'git commit -a'
+    
+    removing files from tracked with 'git rm'
+        if already in staging, must be force removed with 'git rm -f'
+        add --cached if you forgot to ignore it
+
+    file movement - if you want to rename a file
+        $ git mv file_from file_to
+        works like
+        $ mv README.md README
+        $ git rm README.md
+        $ git add README
+
+    view commit history with 'git log'
+        -p or --patch shows patches
+        -<n> shows most recent n patches
+    
+        --pretty formats the log differently. you can add a number of different outputs with stuff like :oneline
+        --since and --until constrain the time period for logging displayed
+
+    undoing mistakes - can be very dangerous in git, since things are typically overwritnen
+        commit once, preserve forever (with exceptions)
+
+        'git reset HEAD <file' unstages
+        'git checkout -- <file>...' if you want to wipe away all progress since last commit
+
+    remote repositories are stored elsewhere, on servers or other distributed networks
+        'git remote' to show which remotes are configured
+        'git remote add <shortname> <url>'
+            shortname is the new reference by which URL can be called
+
+        now you can 'git fetch <remote>' to update your local with everything new in the remote
+            'git pull <remote>' fetches then merges a branch into yours
+
+        'git push <remote> <branch>' to push updates to the remote
+        ' git remote show<remote>' to inspect the 
+
+        'git remote rename <old> <new>' to rename the remote
+
+    tagging - versioning
+        to show all extant tags 'git tag'
+        annotated tags show all info - author, datestamp, email
+            $ git tag -a v1.4 -m "my version 1.4"
+            -m specifies message to be included with the tag
+        lightweight tags are just the checksum
+            $ git tag v1.4-lw
+
+        tagging ex post facto
+            $ git tag -a v1.2 9fceb02
+            where the last block there is part of the checksum
+
+        git push does not explicitly send tags as well.
+            however, the process is identical to pushing branches
+            'git push origin <tagname>'
+
+        -d will delete a specified tag
+
+    aliasing - shortening the referent by creating a much easier reference
+        $ git config --global alias.br branch
+
+branching - diverging from main line of development to work in a free experimental space
