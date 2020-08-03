@@ -208,3 +208,5 @@ github
         6.Discuss, and optionally continue committing.
         7.The project owner merges or closes the Pull Request.
         8.Sync the updated master back to your fork.
+
+current token: e84d113ee7695ba82ab1296f6d29db12bde909ef
