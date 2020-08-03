@@ -107,4 +107,46 @@ branching - diverging from main line of development to work in a free experiment
     best practice is to clean your working area before switching
         i think i lost the previous version of these notes by not doing this...
 
+        'git merge' applies the changes of a branch into a previous one
+        you can do this to move the master branch forward
+        if there are no conflicts, this is known as a fast forward, because the trajectory of your commits is a straight line.
+        however, if you have another branch that you were working on for something else, merging with this new master means you have some changes not represented in the test branch
+        you also now have a hotfix branch that points at the same place your master branch points, so you must delete the temp hotfix branch
+        -d to delete a branch
+
+        once you are ready to merge your older project, git works to combine snapshots from different periods of development
     
+    merge conflicts
+        if your fix involved changes in the same part of the same file for two branches when you try to merge them, you get conflicts
+        git will give a separated comparison of what the conflict is within the same file
+            to resolve, choose one of the options or merge them manually
+            then restage the file to resolve the issue
+        'git mergetool' offers a visual way to compare the changes
+
+    branch management
+        'git branch --merged' or '--no-merged' filters 'git branch' list to items that have been merged into the one you're currently on
+    
+    branching workflows
+        merging branches into others multiple times thorughout development cycle is relatively straightforward under git
+        for example, if your master branch is a dedicated stable environment,
+            new changes can be branched off then merged back in to the master as needed.
+            ideally you would want to have a series of branches for work of varying stability
+        check out the images on page 81 and 82 for a good representation
+    
+    remote-tracking references
+        these are pointers to the remote repository, which may or may not be at a different stage of development than your local environment
+        
+    remote branches
+        git fetch command will fetch all the changes on the server that you don’t have yet but will not  modify  your  working  directory  at  all.
+        git pull  will  look  up  what  server  and  branch  your  current  branch  is  tracking,  fetchfrom that server and then try to merge in that remote branch
+            you must be tracking some remote branch
+
+    rebasing
+         take all thechanges that were committed on one branch and replay them on a different branch
+         This operation works by going to the common ancestor of the two branches (the one you’re on andthe one you’re rebasing onto), 
+         getting the diff introduced by each commit of the branch you’re on,saving those diffs to temporary files, 
+         resetting the current branch to the same commit as the branchyou are rebasing onto, and finally applying each change in turn
+
+        this is done for cleaner history as there will no longer be an offshoot branch - the commit log will be a line
+
+        Do  not  rebase  commits  that  exist  outside  your  repository  and  that  people  may  have  based work on***
