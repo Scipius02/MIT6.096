@@ -150,3 +150,24 @@ branching - diverging from main line of development to work in a free experiment
         this is done for cleaner history as there will no longer be an offshoot branch - the commit log will be a line
 
         Do  not  rebase  commits  that  exist  outside  your  repository  and  that  people  may  have  based work on***
+
+    rebase v merge (opposing philosophies)
+        merge: record  of  what  actuallyhappened.  It’s  a  historical  document,  valuable  in  its  own  right,  and  shouldn’t  be  tampered  with
+        rebase: story of how your project was made.You  wouldn’t  publish  the  first  draft  of  a  book,  and  the  manual  for  how  to  maintain  your  softwaredeserves  careful  editing. 
+    
+git on the server 
+    skip most server setup related items
+    if you ever do set up a server, look into gitweb or gitlab
+
+distributed git
+    centralised workflow
+        one hub with spokes around. people pull from centre and if they want to make changes, after the first change has been made,
+        everyone must merge off of what has been pushed to centre
+    integration-manager workflow (good pic on 125)
+        each developer has write access to their own repositories and public read access to others
+        also has a canonical project
+        to make changes, you clone the canonical and push your changes to it
+        then, you request a maintainer to pull in your changes if they are adequate
+    dictator-lieutenant workflow
+        similar to integration-manager but with another level of access and rebasing without the public aspects
+    
