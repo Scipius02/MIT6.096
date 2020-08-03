@@ -159,10 +159,13 @@ git on the server
     skip most server setup related items
     if you ever do set up a server, look into gitweb or gitlab
 
-distributed git
+distributed git (skip some of the specifics on different team-based approaches. see below for summaries only)
     centralised workflow
         one hub with spokes around. people pull from centre and if they want to make changes, after the first change has been made,
         everyone must merge off of what has been pushed to centre
+
+        small-team flow (see 136)
+
     integration-manager workflow (good pic on 125)
         each developer has write access to their own repositories and public read access to others
         also has a canonical project
@@ -170,4 +173,38 @@ distributed git
         then, you request a maintainer to pull in your changes if they are adequate
     dictator-lieutenant workflow
         similar to integration-manager but with another level of access and rebasing without the public aspects
+
+    maintaining projects
+        topic branch - temporary branch made to test new work
+
+
+Tim Pope's template for commit messages
+    Capitalized, short (50 chars or less) summary
     
+    More detailed explanatory text, if necessary.  Wrap it to about 72characters or so.  
+    In some contexts, the first line is treated as thesubject of an email and the rest of the text as the body.  
+    The blankline separating the summary from the body is critical (unless you omitthe body entirely); 
+    tools like rebase can get confused if you run thetwo together.
+    
+    Write your commit message in the imperative: "Fix bug" and not "Fixed bug"or "Fixes bug."  
+    This convention matches up with commit messages generatedby commands like git merge and git revert.
+    
+    Further paragraphs come after blank lines.
+    
+    - Bullet points are okay, too
+    
+    - Typically a hyphen or asterisk is used for the bullet, followed by a  single space, with blank lines in between, but conventions vary here
+    
+    - Use a hanging indent
+
+github
+    forking - github creates a copy of a project just for you and your workspace
+    github flow:
+        1.Fork the project.
+        2.Create a topic branch from master.
+        3.Make some commits to improve the project.4
+        .Push this branch to your GitHub project.
+        5.Open a Pull Request on GitHub.
+        6.Discuss, and optionally continue committing.
+        7.The project owner merges or closes the Pull Request.
+        8.Sync the updated master back to your fork.
