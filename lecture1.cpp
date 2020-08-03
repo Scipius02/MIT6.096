@@ -18,7 +18,27 @@
 
 // main() defines start up executed code
 int main(){
-    std::cout << "Hello ,world!\n";
+
+/* std is namespace
+     :: is scope - tells compiler which class or namespace to look in for an identifier
+    cout is an identifier within std. this outputs text to screen
+     alternative: beneath preprocessors, add "using namespace std;"
+
+     */
+    std::cout << "Hello ,world!\n"; // \n is an escape sequence - symbol to resolve special status within a literal
     
-    return 0;
+/* list of escape sequences:
+    \a: beep sound
+    \b: backspace
+    \f: page break
+    \n: newline
+    \r: carriage return - returns cursor to start of line
+    \t: tab
+    \\: backslash
+    \': single quote character
+    \": double quote character
+    \some int x: character represented by x
+
+*/
+    return 0; // tells OS the program has completed successfully
     }
